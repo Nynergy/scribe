@@ -1,4 +1,4 @@
-use chrono::{DateTime, Utc};
+use chrono::{DateTime, Local};
 use std::fs::File;
 use std::io::{stdin,stdout,Write};
 
@@ -9,7 +9,7 @@ fn construct_filename(title: &str) -> String {
 }
 
 fn get_current_formatted_date(format: &str) -> String {
-    let now: DateTime<Utc> = Utc::now();
+    let now: DateTime<Local> = Local::now();
     now.format(format).to_string()
 }
 
